@@ -210,7 +210,7 @@ class _Page1State extends State<Page1> {
                 final int detectedNote =
                     _chordPlayer.noteNameToMidi(state.note);
                 final String interval = _chordPlayer.intervalToName(
-                    ((_chordPlayer.root + 12) - (detectedNote)) % 12);
+                    ((detectedNote + 12) - (_chordPlayer.root)) % 12);
                 final bool isChordNote = _chordPlayer.isChordNote(detectedNote);
 
                 return Column(
